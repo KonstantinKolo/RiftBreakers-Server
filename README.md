@@ -101,7 +101,7 @@ curl http://localhost:3000/api/leaderboard
 ### Get Logged-in Player Info
 
 ```bash
-curl http://localhost:3000/api/user/info \
+curl http://localhost:3000/api/info \
   -H "Authorization: Bearer TOKEN_HERE"
 ```
 
