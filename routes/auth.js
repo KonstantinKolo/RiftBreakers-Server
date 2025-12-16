@@ -34,7 +34,7 @@ router.post("/login", rateLimiter, validateLogin, async (req, res) => {
     if (!user) return res.status(400).json({ error: "Invalid credentials" });
     const ok = await bcrypt.compare(password, user.password);
     if (!ok) return res.status(400).json({ error: "Invalid credentials" });
-    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "7d" });
+    const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: "2h" });
     res.json({ token, userId: user._id, username: user.username, displayName: user.displayName });
   } catch (err) {
     console.error("LOGIN ERROR:", err);
