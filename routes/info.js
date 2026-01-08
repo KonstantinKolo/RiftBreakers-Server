@@ -28,7 +28,8 @@ router.get("/info", auth, async (req, res) => {
       username: user.username,
       displayName: user.displayName,
       highscore,
-      rank // null if no score yet
+      rank, // null if no score yet
+      role: user.role
     });
   } catch (err) {
     console.error("INFO ERROR:", err);

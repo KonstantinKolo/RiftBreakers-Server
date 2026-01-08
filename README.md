@@ -77,6 +77,35 @@ curl -X POST http://localhost:3000/api/auth/login \
 
 ---
 
+### Set Role
+```bash
+curl -X POST http://localhost:3000/api/admin/set-role \
+  -H "Authorization: Bearer ADMIN_TOKEN_HERE" \
+  -H "Content-Type: application/json" \
+  -d '{"username":"USERNAME_HERE","role":"ROLE_HERE"}'
+```
+##### The available roles are 'admin', 'tester' and 'user'.
+##### This command is only available to admins
+---
+
+### Get Users Info
+```bash
+curl -X GET http://localhost:3000/api/admin/users \
+  -H "Authorization: Bearer ADMIN_TOKEN_HERE"
+```
+##### This command is only available to admins
+
+---
+
+### Get User Info
+```bash
+curl -X GET "http://localhost:3000/api/admin/user/USERNAME_HERE" \
+  -H "Authorization: Bearer ADMIN_TOKEN_HERE"
+```
+##### This command is only available to admins
+
+---
+
 ### Submit Score (Authenticated)
 
 ```bash

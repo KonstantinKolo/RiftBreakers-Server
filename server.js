@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import helmet from "helmet";
 import cors from "cors";
 import dotenv from "dotenv";
-
+import adminRoutes from "./routes/admin.js";
 import authRoutes from "./routes/auth.js";
 import scoreRoutes from "./routes/score.js";
 import infoRoutes from "./routes/info.js"
@@ -20,6 +20,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+app.use("/api/admin", adminRoutes)
 app.use("/api/auth", authRoutes);
 app.use("/api", infoRoutes)
 app.use("/api", scoreRoutes);

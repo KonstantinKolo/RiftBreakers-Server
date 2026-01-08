@@ -5,6 +5,11 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   displayName: String,
   highscore: { type: Number, default: 0, index: true },
+  role: {
+    type: String,
+    enum: ["user", "tester", "admin"],
+    default: "user"
+  },
   createdAt: { type: Date, default: Date.now }
 });
 
